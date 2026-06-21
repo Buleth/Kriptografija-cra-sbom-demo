@@ -21,21 +21,7 @@ jobs:
           pip install cyclonedx.py
       - name: Generate CycloneDX SBOM
         run: cyclonedx-py environment --output-format json --output-file sbom.cdx.json
-      - name: Generate SPDX SBOM using Trivy
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: 'fs'
-          format: 'spdx-json'
-          output: 'sbom.spdx.json'
-          scan-ref: '.'
-      - name: Upload SBOM artifacts
-        uses: actions/upload-artifacts@v4
-        with:
-          name: sboms
-          path: |
-            sbom.cdx.json
-            sbom.spdx.json
-      - name: Vulenarability Scan
+      - name: Generate SPDX SBOM, Vulnerability Scan
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'fs'
