@@ -23,6 +23,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install cyclonedx.py
+          pip freeze > requirements-frozen.txt
       - name: Remove old SBOMs
         run: rm -f sbom.cdx.json sbom.spdx.json
       - name: Generate CycloneDX SBOM
