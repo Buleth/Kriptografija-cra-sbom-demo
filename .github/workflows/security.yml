@@ -30,4 +30,12 @@ jobs:
           output: 'sbom.spdx.json'
           severity: 'HIGH,CRITICAL'
           exit-code: '1'
+      - name: Upload SBOM
+        uses: actions/upload-artifact@v4
+        with:
+            name: sboms
+            path: |
+              sbom.cdx.json
+              sbom.spdx.json
+
           
