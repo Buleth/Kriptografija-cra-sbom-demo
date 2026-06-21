@@ -3,13 +3,13 @@
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
   "name": ".",
-  "documentNamespace": "http://trivy.dev/repository/.-b36fc241-3371-4b30-be42-5f2b2e2873b1",
+  "documentNamespace": "http://trivy.dev/repository/.-8d9f185f-7180-45ea-8465-702d0123a526",
   "creationInfo": {
     "creators": [
       "Organization: aquasecurity",
       "Tool: trivy-0.71.2"
     ],
-    "created": "2026-06-21T13:58:09Z"
+    "created": "2026-06-21T14:24:37Z"
   },
   "packages": [
     {
@@ -23,7 +23,7 @@
       "annotations": [
         {
           "annotator": "Tool: trivy-0.71.2",
-          "annotationDate": "2026-06-21T13:58:09Z",
+          "annotationDate": "2026-06-21T14:24:37Z",
           "annotationType": "OTHER",
           "comment": "SchemaVersion: 2"
         }
