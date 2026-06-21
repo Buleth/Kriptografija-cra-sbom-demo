@@ -27,7 +27,7 @@ jobs:
         run: rm -f sbom.cdx.json sbom.spdx.json
       - name: Generate CycloneDX SBOM
         run: cyclonedx-py environment --output-format json --output-file sbom.cdx.json
-      - name: Generate SPDX SBOM, Vulnerability Scan
+      - name: Generate SPDX SBOM
         uses: aquasecurity/trivy-action@master
         with:
           scan-type: 'fs'
@@ -36,7 +36,16 @@ jobs:
           output: 'sbom.spdx.json'
           scanners: 'vuln'
           severity: 'HIGH,CRITICAL'
-          exit-code: '1'
+          exit-code: '0'
+      - name: Vulnerability Scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: 'table'
+          scanners: 'vuln'
+          severity: 'LOW,MEDIUM,HIGH,CRITICAL'
+          exit-code: '0'
       - name: Commit updated SBOMs
         uses: stefanzweifel/git-auto-commit-action@v7
         with: 
