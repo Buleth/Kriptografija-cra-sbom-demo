@@ -1749,11 +1749,7 @@
     }
   ],
   "metadata": {
-<<<<<<< HEAD
-    "timestamp": "2026-06-21T12:51:48.992813+00:00",
-=======
-    "timestamp": "2026-06-21T13:23:28.757116+00:00",
->>>>>>> fe7a1c9591c18c7c04cabcf9ce0fef9cdb092f31
+    "timestamp": "2026-06-21T13:37:50.034469+00:00",
     "tools": {
       "components": [
         {
@@ -1857,11 +1853,7 @@
       ]
     }
   },
-<<<<<<< HEAD
-  "serialNumber": "urn:uuid:7eed3d51-190a-4c13-b533-726ea6009ad2",
-=======
-  "serialNumber": "urn:uuid:09b2cc46-270e-454d-8454-e4b871b27e0e",
->>>>>>> fe7a1c9591c18c7c04cabcf9ce0fef9cdb092f31
+  "serialNumber": "urn:uuid:11a44d93-75a7-41a6-b725-0b1a3bfdb323",
   "version": 1,
   "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
   "bomFormat": "CycloneDX",
