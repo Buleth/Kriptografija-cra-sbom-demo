@@ -7,9 +7,13 @@ on:
 jobs: 
   security-scan:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -32,12 +36,13 @@ jobs:
           output: 'sbom.spdx.json'
           severity: 'HIGH,CRITICAL'
           exit-code: '1'
-      - name: Upload SBOM
-        uses: actions/upload-artifact@v4
-        with:
-            name: sboms
-            path: |
-              sbom.cdx.json
-              sbom.spdx.json
+      - name: Commit updated SBOMs
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with: 
+          commit_message: "Updating SBOM files [skip ci]"
+          file_pattern: "sbom.cdx.json sbom.spdx.json" 
+          
+
+
 
           
