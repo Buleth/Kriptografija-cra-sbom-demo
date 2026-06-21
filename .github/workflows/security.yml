@@ -26,7 +26,8 @@ jobs:
         with:
           scan-type: 'fs'
           scan-ref: '.'
+          format: 'spdx-json'
+          output: 'sbom.spdx.json'
           severity: 'HIGH,CRITICAL'
-          format: 'table'
           exit-code: '1'
           
